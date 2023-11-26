@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './UserTable.css'; // Import the CSS file
 
 const UserTable = () => {
   const [userData, setUserData] = useState([]);
@@ -18,14 +19,14 @@ const UserTable = () => {
 
     fetchData();
   }, []);
-
   return (
-    <div>
+    <div className="container">
       <h1>User Table</h1>
       <table>
         <thead>
           <tr>
-            <th>City State</th>
+            <th>City</th>
+            <th>State</th>
             <th>Country</th>
             <th>Postcode</th>
             <th>Street Number</th>
@@ -37,7 +38,8 @@ const UserTable = () => {
         <tbody>
           {userData.map((user, index) => (
             <tr key={index}>
-              <td>{user.location.city}, {user.location.state}</td>
+              <td>{user.location.city}</td>
+              <td>{user.location.state}</td>
               <td>{user.location.country}</td>
               <td>{user.location.postcode}</td>
               <td>{user.location.street.number}</td>
