@@ -19,6 +19,7 @@ const UserTable = () => {
 
     fetchData();
   }, []);
+
   return (
     <div className="container">
       <h1>User Table</h1>
@@ -30,7 +31,7 @@ const UserTable = () => {
             <th>Country</th>
             <th>Postcode</th>
             <th>Street Number</th>
-            <th>Name</th>
+            <th>Street Name</th>
             <th>Latitude</th>
             <th>Longitude</th>
           </tr>
@@ -43,7 +44,7 @@ const UserTable = () => {
               <td>{user.location.country}</td>
               <td>{user.location.postcode}</td>
               <td>{user.location.street.number}</td>
-              <td>{user.name.first} {user.name.last}</td>
+              <td>{user.location.street.name}</td>
               <td>{user.location.coordinates.latitude}</td>
               <td>{user.location.coordinates.longitude}</td>
             </tr>
